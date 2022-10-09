@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-10-09T08:30:37+08:00
+
+====== nullable impl ======
+创建日期 星期日 09 十月 2022
+
+实现 nullable 
+
+* 给每一行添加一个bitmap（内部用char  大小4 byte  可以记录32个属性的null值）系统列，
+需要修改
+* 插入方法  ---  done
+* 更新方法
+* 创建方法
+* 解析实现  — done
+
+疑惑：
+* 在索引内如何实现？
+
