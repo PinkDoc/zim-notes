@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-10-16T19:50:20+08:00
+
+====== two-phase-locking ======
+创建日期 星期日 16 十月 2022
+
+we need a way to guarantee that all execution schedules are correct (i.e. serializable) with out the entire schedule ahead of time.
+
+=== Solution: ===
+	Use locks to protect database objects.
+
+
+=== Two-phase locking (2PL) ===
+a concurrency control protocol
+that determines whether a txn can access an object in database on the fly.
+
+The protocol does not need to know all the queries that a txn will execute ahead of time.
+
+=== Phase #1: Growing ===
+-> Each txn request that locks that it needs from DBMS's lock manager.
+-> The Lock manager grants / denies lock requests.
+
+=== Phase #2: Shrinking ===
+-> The txn is allowed to only release locks that is previously acquired. It can not acquire new locks.
+
+
+
+
+
+
