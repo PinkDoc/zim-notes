@@ -25,7 +25,23 @@ The protocol does not need to know all the queries that a txn will execute ahead
 -> The txn is allowed to only release locks that is previously acquired. It can not acquire new locks.
 
 
+=== Some pictures ===
+==== non 2pl ====
+{{~\Pictures\cmu15445\non-2pl-example.png}}
 
+==== 2pl ====
+
+{{~\Pictures\cmu15445\2pl-example.png}}
+
+==== Strong 2PL ====
+
+{{~\Pictures\cmu15445\strong-2PL-example.png}}
+=== = ===
+=== **q:** ===
+=== **what's the different between 2pl and strong2pl** ===
+=== = ===
+=== **a:** ===
+=== **strong 2pl: it unlocks util the ending of txn. 2pl: it can unlock at any time** ===
 
 
 

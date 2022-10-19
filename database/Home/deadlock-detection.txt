@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-10-16T21:29:53+08:00
+
+====== deadlock-detection ======
+Created 星期日 16 十月 2022
+
+The dbms creates a wait-for graph to keep track of what locks each txn is waiting to acquire"
+-> Nodes are transations.
+-> Edge from Ti to Tj if Ti is waiting for Tj to release a lock.
+
+The system periodically checks for cycles in waits-for graph and then decides how to break it.
+
+Selecting the proper victim depends on a lot of 
+different variables….
+→ By age (lowest timestamp)
+→ By progress (least/most queries executed)
+→ By the # of items already locked
+→ By the # of txns that we have to rollback with it
+We also should consider the # of times a txn has 
+been restarted in the past to prevent starvation.
+
+
+            

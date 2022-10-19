@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2022-10-16T21:07:08+08:00
+
+====== deadlock-prevention ======
+Created 星期日 16 十月 2022
+
+When a txn tries to acquire a lock that is held by 
+another txn, the DBMS kills one of them to 
+prevent a deadlock.
+This approach does not require a waits-for graph 
+or detection algorithm
+
+Assign priorities based on timestamps:
+→ Older Timestamp = Higher Priority (e.g., T1 > T2)
+Wait-Die ("Old Waits for Young")
+→ If requesting txn has higher priority than holding txn, then 
+requesting txn waits for holding txn. 
+→ Otherwise requesting txn aborts.
+Wound-Wait ("Young Waits for Old")
+→ If requesting txn has higher priority than holding txn, then 
+holding txn aborts and releases lock.
+→ Otherwise requesting txn waits.
